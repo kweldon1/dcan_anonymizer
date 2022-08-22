@@ -13,19 +13,19 @@ D_TAGS = [
 
 # Replaced with empty values (0, '', ...)
 Z_TAGS = [
-    (0x0008, 0x0050), # Accession Number
+#    (0x0008, 0x0050), # Accession Number
     (0x0070, 0x0084), # Content Creator's Name
     (0x0040, 0x2017), # Filler Order Number / Imaging Service Request
-    (0x0010, 0x0020), # Patient ID
-    (0x0010, 0x0030), # Patient's Birth Date
-    (0x0010, 0x0010), # Patient's Name
-    (0x0010, 0x0040), # Patient's Sex
-    (0x0040, 0x2016), # Placer Order Number / Imaging Service Request
-    (0x0008, 0x0090), # Referring Physician's Name
+#    (0x0010, 0x0020), # Patient ID
+#    (0x0010, 0x0030), # Patient's Birth Date
+#    (0x0010, 0x0010), # Patient's Name
+#    (0x0010, 0x0040), # Patient's Sex
+#    (0x0040, 0x2016), # Placer Order Number / Imaging Service Request
+#    (0x0008, 0x0090), # Referring Physician's Name
     (0x0008, 0x0020), # Study Date
     (0x0020, 0x0010), # Study ID
     (0x0008, 0x0030), # Study Time
-    (0x0040, 0xA088), # Verifying Observer Identification Code Sequence
+#    (0x0040, 0xA088), # Verifying Observer Identification Code Sequence
 ]
 
 # Deleted tags
@@ -118,7 +118,7 @@ X_TAGS = [
     (0x0010, 0x4000), # Patient Comments
     (0x0038, 0x0500), # Patient State
     (0x0040, 0x1004), # Patient Transport Arrangements
-    (0x0010, 0x1010), # Patient's Age
+ #   (0x0010, 0x1010), # Patient's Age
     (0x0010, 0x1005), # Patient's Birth Name
     (0x0010, 0x0032), # Patient's Birth Time
     (0x0038, 0x0400), # Patient's Institution Residence
@@ -190,13 +190,13 @@ X_TAGS = [
     (0x0040, 0x4025), # Scheduled Station Name Code Sequence
     (0x0032, 0x1020), # Scheduled Study Location
     (0x0032, 0x1021), # Scheduled Study Location AE Title
-    (0x0008, 0x103E), # Series Description
-    (0x0038, 0x0062), # Service Episode Description
-    (0x0038, 0x0060), # Service Episode ID
+#    (0x0008, 0x103E), # Series Description
+#    (0x0038, 0x0062), # Service Episode Description
+#    (0x0038, 0x0060), # Service Episode ID
     (0x0010, 0x21A0), # Smoking Status
     (0x0038, 0x0050), # Special Needs
-    (0x0032, 0x4000), # Study Comments
-    (0x0008, 0x1030), # Study Description
+#    (0x0032, 0x4000), # Study Comments
+#    (0x0008, 0x1030), # Study Description
     (0x0032, 0x0012), # Study ID Issuer
     (0x4000, 0x4000), # Text Comments
     (0x2030, 0x0020), # Text String
@@ -211,35 +211,35 @@ X_TAGS = [
 
 # Replace UID
 U_TAGS = [
-    (0x0020, 0x9161), # Concatenation UID
-    (0x0008, 0x010D), # Context Group Extension Creator UID
-    (0x0008, 0x9123), # Creator Version UID
-    (0x0018, 0x1002), # Device UID
-    (0x0020, 0x9164), # Dimension Organization UID
-    (0x300A, 0x0013), # Dose Reference UID
-    (0x0008, 0x0058), # Failed SOP Instance UID List
-    (0x0070, 0x031A), # Fiducial UID
-    (0x0020, 0x0052), # Frame of Reference UID
-    (0x0008, 0x0014), # Instance Creator UID
-    (0x0008, 0x3010), # Irradiation Event UID
-    (0x0028, 0x1214), # Large Palette Color Lookup Table UID
-    (0x0002, 0x0003), # Media Storage SOP Instance UID
-    (0x0028, 0x1199), # Palette Color Lookup Table UID
-    (0x3006, 0x0024), # Referenced Frame of Reference UID
-    (0x0040, 0x4023), # Referenced General Purpose Scheduled Procedure Step Transaction UID
-    (0x0008, 0x1155), # Referenced SOP Instance UID
-    (0x0004, 0x1511), # Referenced SOP Instance UID in File
-    (0x3006, 0x00C2), # Related Frame of Reference UID
-    (0x0000, 0x1001), # Requested SOP Instance UID
-    (0x0020, 0x000E), # Series Instance UID
-    (0x0008, 0x0018), # SOP Instance UID
-    (0x0088, 0x0140), # Storage Media File-set UID
-    (0x0020, 0x000D), # Study Instance UID
-    (0x0020, 0x0200), # Synchronization Frame of Reference UID
-    (0x0040, 0xDB0D), # Template Extension Creator UID
-    (0x0040, 0xDB0C), # Template Extension Organization UID
-    (0x0008, 0x1195), # Transaction UID
-    (0x0040, 0xA124), # UID
+#    (0x0020, 0x9161), # Concatenation UID
+#    (0x0008, 0x010D), # Context Group Extension Creator UID
+#    (0x0008, 0x9123), # Creator Version UID
+#    (0x0018, 0x1002), # Device UID
+#    (0x0020, 0x9164), # Dimension Organization UID
+#    (0x300A, 0x0013), # Dose Reference UID
+#    (0x0008, 0x0058), # Failed SOP Instance UID List
+#    (0x0070, 0x031A), # Fiducial UID
+#    (0x0020, 0x0052), # Frame of Reference UID
+#    (0x0008, 0x0014), # Instance Creator UID
+#    (0x0008, 0x3010), # Irradiation Event UID
+#    (0x0028, 0x1214), # Large Palette Color Lookup Table UID
+#    (0x0002, 0x0003), # Media Storage SOP Instance UID
+#    (0x0028, 0x1199), # Palette Color Lookup Table UID
+#    (0x3006, 0x0024), # Referenced Frame of Reference UID
+#    (0x0040, 0x4023), # Referenced General Purpose Scheduled Procedure Step Transaction UID
+#    (0x0008, 0x1155), # Referenced SOP Instance UID
+#    (0x0004, 0x1511), # Referenced SOP Instance UID in File
+#    (0x3006, 0x00C2), # Related Frame of Reference UID
+#    (0x0000, 0x1001), # Requested SOP Instance UID
+#    (0x0020, 0x000E), # Series Instance UID
+#    (0x0008, 0x0018), # SOP Instance UID
+#    (0x0088, 0x0140), # Storage Media File-set UID
+#    (0x0020, 0x000D), # Study Instance UID
+#    (0x0020, 0x0200), # Synchronization Frame of Reference UID
+#    (0x0040, 0xDB0D), # Template Extension Creator UID
+#    (0x0040, 0xDB0C), # Template Extension Organization UID
+#    (0x0008, 0x1195), # Transaction UID
+#    (0x0040, 0xA124), # UID
 ]
 
 # Replace element according to the VR
@@ -251,8 +251,8 @@ Z_D_TAGS = [
 
 # Set the value to empty according to the VR
 X_Z_TAGS = [
-    (0x0008, 0x0022), # Acquisition Date
-    (0x0008, 0x0032), # Acquisition Time
+#    (0x0008, 0x0022), # Acquisition Date
+#    (0x0008, 0x0032), # Acquisition Time
     (0x0010, 0x2203), # Patient Sex Neutered
     (0x0008, 0x1110), # Referenced Study Sequence
     (0x0032, 0x1060), # Requested Procedure Description
@@ -265,25 +265,25 @@ X_D_TAGS = [
     (0x0018, 0x1400), # Acquisition Device Processing Description
     (0x0018, 0x700A), # Detector ID
     (0x0008, 0x1072), # Operators' Identification Sequence
-    (0x0018, 0x1030), # Protocol Name
-    (0x0008, 0x0021), # Series Date
-    (0x0008, 0x0031), # Series Time
+#    (0x0018, 0x1030), # Protocol Name
+#    (0x0008, 0x0021), # Series Date
+#    (0x0008, 0x0031), # Series Time
 ]
 
 # Replace element according to the VR
 X_Z_D_TAGS = [
-    (0x0018, 0x1000), # Device Serial Number
+#    (0x0018, 0x1000), # Device Serial Number
     (0x0008, 0x0082), # Institution Code Sequence
     (0x0008, 0x0080), # Institution Name
-    (0x0008, 0x1070), # Operators' Name
-    (0x0008, 0x1111), # Referenced Performed Procedure Step Sequence
-    (0x0008, 0x1010), # Station Name
+#    (0x0008, 0x1070), # Operators' Name
+#    (0x0008, 0x1111), # Referenced Performed Procedure Step Sequence
+#    (0x0008, 0x1010), # Station Name
 ]
 
 # Replace element with UI as VR, else replace according to VR with empty values
 X_Z_U_STAR_TAGS = [
-    (0x0008, 0x1140), # Referenced Image Sequence
-    (0x0008, 0x2112), # Source Image Sequence
+#    (0x0008, 0x1140), # Referenced Image Sequence
+#    (0x0008, 0x2112), # Source Image Sequence
 ]
 
 # Contains all previous tags into one array
