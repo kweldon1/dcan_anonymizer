@@ -13,19 +13,19 @@ D_TAGS = [
 
 # Replaced with empty values (0, '', ...)
 Z_TAGS = [
-#    (0x0008, 0x0050), # Accession Number
+    (0x0008, 0x0050), # Accession Number
     (0x0070, 0x0084), # Content Creator's Name
     (0x0040, 0x2017), # Filler Order Number / Imaging Service Request
-#    (0x0010, 0x0020), # Patient ID
-#    (0x0010, 0x0030), # Patient's Birth Date
-#    (0x0010, 0x0010), # Patient's Name
-#    (0x0010, 0x0040), # Patient's Sex
-#    (0x0040, 0x2016), # Placer Order Number / Imaging Service Request
-#    (0x0008, 0x0090), # Referring Physician's Name
-    (0x0008, 0x0020), # Study Date
-    (0x0020, 0x0010), # Study ID
-    (0x0008, 0x0030), # Study Time
-#    (0x0040, 0xA088), # Verifying Observer Identification Code Sequence
+    (0x0010, 0x0020), # Patient ID
+    (0x0010, 0x0030), # Patient's Birth Date
+    (0x0010, 0x0010), # Patient's Name
+    (0x0010, 0x0040), # Patient's Sex
+    (0x0040, 0x2016), # Placer Order Number / Imaging Service Request
+    (0x0008, 0x0090), # Referring Physician's Name
+#    (0x0008, 0x0020), # Study Date
+#    (0x0020, 0x0010), # Study ID
+#    (0x0008, 0x0030), # Study Time
+    (0x0040, 0xA088), # Verifying Observer Identification Code Sequence
 ]
 
 # Deleted tags
@@ -118,7 +118,7 @@ X_TAGS = [
     (0x0010, 0x4000), # Patient Comments
     (0x0038, 0x0500), # Patient State
     (0x0040, 0x1004), # Patient Transport Arrangements
- #   (0x0010, 0x1010), # Patient's Age
+#   (0x0010, 0x1010), # Patient's Age
     (0x0010, 0x1005), # Patient's Birth Name
     (0x0010, 0x0032), # Patient's Birth Time
     (0x0038, 0x0400), # Patient's Institution Residence
@@ -191,8 +191,8 @@ X_TAGS = [
     (0x0032, 0x1020), # Scheduled Study Location
     (0x0032, 0x1021), # Scheduled Study Location AE Title
 #    (0x0008, 0x103E), # Series Description
-#    (0x0038, 0x0062), # Service Episode Description
-#    (0x0038, 0x0060), # Service Episode ID
+    (0x0038, 0x0062), # Service Episode Description
+    (0x0038, 0x0060), # Service Episode ID
     (0x0010, 0x21A0), # Smoking Status
     (0x0038, 0x0050), # Special Needs
 #    (0x0032, 0x4000), # Study Comments
@@ -244,8 +244,8 @@ U_TAGS = [
 
 # Replace element according to the VR
 Z_D_TAGS = [
-    (0x0008, 0x0023), # Content Date
-    (0x0008, 0x0033), # Content Time
+#    (0x0008, 0x0023), # Content Date
+#    (0x0008, 0x0033), # Content Time
     (0x0018, 0x0010), # Contrast Bolus Agent
 ]
 
@@ -261,8 +261,8 @@ X_Z_TAGS = [
 
 # Replace element according to the VR
 X_D_TAGS = [
-    (0x0008, 0x002A), # Acquisition DateTime
-    (0x0018, 0x1400), # Acquisition Device Processing Description
+#    (0x0008, 0x002A), # Acquisition DateTime
+#    (0x0018, 0x1400), # Acquisition Device Processing Description
     (0x0018, 0x700A), # Detector ID
     (0x0008, 0x1072), # Operators' Identification Sequence
 #    (0x0018, 0x1030), # Protocol Name
@@ -272,12 +272,12 @@ X_D_TAGS = [
 
 # Replace element according to the VR
 X_Z_D_TAGS = [
-#    (0x0018, 0x1000), # Device Serial Number
+    (0x0018, 0x1000), # Device Serial Number
     (0x0008, 0x0082), # Institution Code Sequence
     (0x0008, 0x0080), # Institution Name
-#    (0x0008, 0x1070), # Operators' Name
-#    (0x0008, 0x1111), # Referenced Performed Procedure Step Sequence
-#    (0x0008, 0x1010), # Station Name
+    (0x0008, 0x1070), # Operators' Name
+    (0x0008, 0x1111), # Referenced Performed Procedure Step Sequence
+    (0x0008, 0x1010), # Station Name
 ]
 
 # Replace element with UI as VR, else replace according to VR with empty values
