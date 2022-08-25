@@ -71,7 +71,7 @@ if __name__ == "__main__":
     for x in os.listdir(args.input):
         #print(os.path.join(CURRENT_DIR,args.input, x), " target ", os.path.join(CURRENT_DIR, args.target_dir,  x))
         target_dir = ensure_directory(os.path.join(CURRENT_DIR, args.target_dir,  x))
-        command = "dicom-anonymizer --keepPrivateTags  --dictionary " + os.path.join(CURRENT_DIR, "anonymizeTagsDict.json") + " " +  os.path.join(CURRENT_DIR,args.input, x) + " " +  target_dir 
+        command = "dicom-anonymizer --keepPrivateTags " +  os.path.join(CURRENT_DIR,args.input, x) + " " +  target_dir 
 
         print(command)
         os.system(command)
