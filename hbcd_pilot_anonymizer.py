@@ -35,7 +35,7 @@ def parse_arguments():
     parser.add_argument('--target-dir', '-t',required=True,
             help="Output dir for anonymized files.")
 
-    parser.add_argument('--patient-name', '-p', default=None,
+    parser.add_argument('--patient-name', '-p', default=None, ,required=True,
             help="Anonmized Patient name")
 
     parser.add_argument('--patient-id', '-d',default=None,
