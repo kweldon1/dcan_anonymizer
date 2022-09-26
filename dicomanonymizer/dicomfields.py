@@ -16,9 +16,9 @@ Z_TAGS = [
     (0x0008, 0x0050), # Accession Number
     (0x0070, 0x0084), # Content Creator's Name
     (0x0040, 0x2017), # Filler Order Number / Imaging Service Request
-    (0x0010, 0x0020), # Patient ID
-    (0x0010, 0x0030), # Patient's Birth Date
-    (0x0010, 0x0010), # Patient's Name
+#    (0x0010, 0x0020), # Patient ID
+#    (0x0010, 0x0030), # Patient's Birth Date
+#    (0x0010, 0x0010), # Patient's Name
     (0x0010, 0x0040), # Patient's Sex
     (0x0040, 0x2016), # Placer Order Number / Imaging Service Request
     (0x0008, 0x0090), # Referring Physician's Name
