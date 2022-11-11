@@ -35,13 +35,15 @@ def parse_arguments():
     parser.add_argument('--target-dir', '-t',required=True,
             help="Output dir for anonymized files.")
 
-    parser.add_argument('--patient-name', '-p', default=None, required=True,
+    parser.add_argument('--patient-name', '-p', default=None,
             help="Anonmized Patient name")
 
     parser.add_argument('--patient-id', '-d',default=None,
             help='Anonymized Patient ID.')
     parser.add_argument('--patient-age', '-a',default=None,required=True,
             help='Anonymized Patient Age in Weeks.')
+    parser.add_argument('--patient-dob', '-b',default=None,
+            help='Anonymized Patient DOB.')
 
     return parser.parse_args()
 
@@ -88,6 +90,11 @@ if __name__ == "__main__":
            command4 = 'dcmodify -i "(0010,1010)='+ args.patient_age+ '" -nb ' + target_dir + '/*'
            os.system(command4)
            log.info("Anonymize Patient Age for this folder: %s", x)
+
+        if args.patient_dob:
+           command5 = 'dcmodify -i "(0010,0030)='+ args.patient_dob+ '" -nb ' + target_dir + '/*'
+           os.system(command5)
+           log.info("Anonymize Patient DOB for this folder: %s", x)
  
         
        
