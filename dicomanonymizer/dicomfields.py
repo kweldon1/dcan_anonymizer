@@ -272,7 +272,7 @@ X_D_TAGS = [
 
 # Replace element according to the VR
 X_Z_D_TAGS = [
-    (0x0018, 0x1000), # Device Serial Number
+#    (0x0018, 0x1000), # Device Serial Number
     (0x0008, 0x0082), # Institution Code Sequence
     (0x0008, 0x0080), # Institution Name
     (0x0008, 0x1070), # Operators' Name
