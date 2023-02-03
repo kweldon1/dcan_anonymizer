@@ -19,6 +19,7 @@ import shlex
 import sys
 import pydicom
 import re
+import hashlib
 
 CURRENT_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)))
 log.basicConfig(
@@ -28,38 +29,54 @@ log.basicConfig(
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
-            description="Anonymize the HBCD Pilot data with a folder.")
+            description="Anonymize the DICOM data within a folder.")
 
     parser.add_argument('--input','-i', required=True,
             help="Input directory name for original dicom files.")
 
-    parser.add_argument('--patient-name', '-p', default=None, required=True,
+    parser.add_argument('--hash-tags', '-t', default=None, 
+            help="Tag Keyword need to be hashed in [PatientName;PatientID;] format. ")
+    parser.add_argument('--patient-name', '-p', default=None, 
             help="Anonmized Patient name")
 
-    parser.add_argument('--patient-age', '-a',default=None,required=True,
+    parser.add_argument('--patient-age', '-a',default=None,
             help='Anonymized Patient Age in Weeks.')
 
     #validate age with pattern
-    pattern = re.compile("^[0-9]{3}[M,W]{1}")
-    if pattern.match(parser.parse_args().patient_age):
-        print("Age format is ok")
-    else:
-        print("Age format is bad")
-        return 
+    pattern = re.compile("^[0-9]{3}[M,W,Y]{1}")
+    if parser.parse_args().patient_age:
+        if pattern.match(parser.parse_args().patient_age):
+            print("Age format is ok")
+        else:
+            print("Age format is bad: should be in this pattern: ^[0-9]{3}[M,W,Y]{1}")
+            return 
     #validate patient_name with tripple ID pattern PIARK0010_510042_V02
-    pattern = re.compile("^[0-9, A-Z]{9}[_][0-9]{6}[_][V][0-9]{2}")
-    if pattern.match(parser.parse_args().patient_name):
-        print("Patient name  is ok")
-    else:
-        print("Patient name is bad")
-        return
+    #pattern = re.compile("^[0-9, A-Z]{9}[_][0-9]{6}[_][V][0-9]{2}")
+    pattern = re.compile("^[a-zA-Z0-9-_.]*$")
+    if parser.parse_args().patient_name:
+        if pattern.match(parser.parse_args().patient_name):
+            print("Patient name  is ok")
+        else:
+            print("Patient name is bad, should be in this patten: [a-zA-Z0-9-_.]*$ ")
+            return
     #check input name: No space and link should be [0-9,A-Z,a-z,-,_,.]
     pattern = re.compile("^[a-zA-Z0-9-_.]*$")
     if pattern.match(parser.parse_args().input):
         print("filaname format is ok")
     else:
-        print("filename contains space")
+        print("filename should be in this pattern: ^[a-zA-Z0-9-_.]*$")
         return
+
+
+    #pattern = re.compile("0X[0-9]{4}, 0X[0-9]{4}[;]")
+    pattern = re.compile("^[a-zA-Z0-9-_.;]")
+    if parser.parse_args().hash_tags:
+        if pattern.match(parser.parse_args().hash_tags):
+            print("Tag format is ok")
+        else:
+            print("Tags should be in this pattern: [XXXX,XXXX;XXXX,XXXX] ")
+            return
+
     return parser.parse_args()
 
 def ensure_directory(parent,output):
@@ -108,10 +125,21 @@ if __name__ == "__main__":
                 if args.patient_age:
                     dataset.PatientAge = args.patient_age
 
+                if args.hash_tags:
+                    hashtags = args.hash_tags.split(";")
+                    for tag in hashtags:
+                        print(tag) 
+                        if tag in dataset:
+                            currentValue = dataset[tag].value
+                            newValue = hashlib.md5(currentValue.encode()).hexdigest()
+                            dataset[tag].value = newValue
+                        else:
+                            print(tag, " not in the dataset")
+
                 dataset.save_as(filename)
  
                 
-        log.info("Anonymize Patient Name, ID and Age for this folder: %s", x)
+        log.info("Anonymized for this folder: %s", x)
 
     log.info('Ended run with invocation: %s', sys.argv)
 
